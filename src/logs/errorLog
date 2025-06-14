@@ -1,0 +1,41 @@
+::1 [21/Mar/2025:16:47:27 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 "bad error"
+::1 [21/Mar/2025:16:48:00 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 "bad error"
+::1 [21/Mar/2025:16:49:25 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 "bad error"
+::1 [21/Mar/2025:16:50:14 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 "bad error"
+::1 [25/Mar/2025:15:43:27 +0000] GET /favicon.ico 500 http://localhost:5000/ Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 "bad error"
+::1 [25/Mar/2025:16:26:50 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":"Invalid data"}
+::1 [25/Mar/2025:16:27:20 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":"Invalid data"}
+::1 [25/Mar/2025:16:31:32 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":"Invalid data"}
+::1 [25/Mar/2025:16:38:41 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":{"issues":[{"validation":"regex","code":"invalid_string","message":"didn't match required pattern","path":["password"]}],"name":"ZodError"}}
+::1 [25/Mar/2025:16:52:28 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":{"error":{"password":["didn't match required pattern"]}}}
+::1 [25/Mar/2025:16:53:04 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":{"password":["didn't match required pattern"]}}
+::1 [25/Mar/2025:16:54:02 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":{"password":["didn't match required pattern"]}}
+::1 [25/Mar/2025:16:56:13 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":{"password":["didn't match required pattern"]}}
+::1 [25/Mar/2025:16:58:47 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":{"password":["didn't match required pattern"]}}
+::1 [25/Mar/2025:17:04:29 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 {"error":{"password":["didn't match required pattern"]}}
+::1 [13/Apr/2025:19:24:27 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 {"error":{"password":["didn't match required pattern"]}}
+::1 [13/Apr/2025:20:47:08 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:20:48:44 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:20:48:45 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:20:48:57 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:20:49:53 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:20:50:27 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:20:51:12 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:20:53:09 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:20:53:18 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:20:53:27 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 {"error":{"passwordConfirm":["Passwords don't match"]}}
+::1 [13/Apr/2025:20:53:41 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::ffff:192.168.1.5 [13/Apr/2025:20:54:10 +0000] GET / 500 - Avast Antivirus "bad error"
+::ffff:192.168.1.5 [13/Apr/2025:20:54:14 +0000] GET /loginMsg.js 500 - Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko "bad error"
+::ffff:192.168.1.5 [13/Apr/2025:20:54:14 +0000] GET /cgi/get.cgi?cmd=home_login 500 - Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko "bad error"
+::ffff:192.168.1.5 [13/Apr/2025:20:54:14 +0000] POST /boaform/admin/formTracert 500 - Avast Antivirus "bad error"
+::1 [13/Apr/2025:20:58:52 +0000] POST /api/v1/users 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "bad error"
+::1 [13/Apr/2025:21:48:38 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 "Unexpected token , in JSON at position 69"
+::1 [13/Apr/2025:22:29:27 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 {"error":{"passwordConfirm":["Passwords don't match"]}}
+::1 [13/Apr/2025:22:30:13 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 {"error":{"password":["didn't match required pattern"],"passwordConfirm":["Passwords don't match"]}}
+::1 [13/Apr/2025:22:30:24 +0000] POST /api/v1/users 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 {"error":"Unexpected token , in JSON at position 70"}
+::1 [12/May/2025:19:19:35 +0000] GET /api/v1/tasks 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 "{\"error\":\"Unknown error\"}"
+::1 [12/May/2025:19:22:00 +0000] GET /api/v1/tasks 500 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 "{\"error\":\"Unknown error\"}"
+::1 [12/May/2025:19:23:55 +0000] GET /api/v1/tasks 400 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 "{\"error\":\"Unknown Database error with the following message:\\n\\\"task\\\" alias was not found. Maybe you forgot to join it?\"}"
+::ffff:192.168.1.4 [14/May/2025:00:28:46 +0000] GET / 500 - Avast Antivirus "{\"error\":\"Unknown error\"}"
+::ffff:192.168.1.4 [14/May/2025:00:28:46 +0000] GET / 500 - Avast Antivirus "{\"error\":\"Unknown error\"}"

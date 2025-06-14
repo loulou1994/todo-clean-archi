@@ -1,0 +1,515 @@
+openapi: 3.0.4
+info:
+  title: TODO APP - OPENAPI 3.0
+  description:
+    A really simple To do app to kill time and learn some new concepts like the Restful Api way to build backend APIs. Also, doing my first ever database working. Designing some schema models and relations. Hopefully, This is gonna be a fun ride. I'm also working on my Typescript's OOP's programming approach. I personnally like the functionnal coding style as it's intuitive, simple, and not highly complex.
+    [Visit our homepage](https:\\www.google.com)
+
+  termsOfService: https://www.google.com
+  contact:
+    email: le.gas.du43@gmail.com
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+    description: local development
+externalDocs:
+  description: Find out more about
+  url: https:\\www.google.com
+
+tags:
+  - name: authentication
+    description: Everything about authentication sytem operations
+    externalDocs:
+      description: Discover a lot more
+      url: https:\\www.google.com
+  - name: user
+    description: Everything about the User entity
+    externalDocs:
+      description: Discover a lot more
+      url: https:\\www.google.com
+  - name: task
+    description: Everything on the Task entity
+    externalDocs:
+      description: Discover a lot more
+      url: https:\\www.google.com
+
+paths:
+  /auth/login:
+    post:
+      tags: [authentication]
+      summary: Login to the Application
+      description: Authenticate to the app
+      operationId: authUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/User"
+                - type: object
+                  properties:
+                    email:
+                      type: string
+                      readOnly: true
+      responses:
+        "201":
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: "Invalid data"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/CustomError"
+                  - type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 400
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/CustomError"
+                  - type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 500
+                
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+  /auth/register:
+    post:
+      tags: [authentication]
+      summary: Sign up to the Application
+      description: Register as an application user
+      operationId: registerUser
+      responses:
+        "200":
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        "400":
+          description: "Invalid data"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/CustomError"
+                  - type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 400
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/CustomError"
+                  - type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 500
+                
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        
+      
+  /users:
+    get:
+      tags: [user]
+      summary: Get all users
+      description: Retrieves a list of users.
+      operationId: getUsers
+      responses:
+        "200":
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        "401":
+          description: "Not authenticated"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/CustomError"
+                  - type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 401
+        "403":
+          description: "Not allowed"
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/CustomError"
+                  - type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 403
+              
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/CustomError"
+                  - type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 500
+                
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+                  
+    post:
+      tags: [user]
+      summary: Create a new user
+      description: Create a whole new user
+      operationId: createUser
+      responses:
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/CustomError"
+                  - type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 501
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/CustomError"
+                  - type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 504
+
+  /users/{id}:
+    get:
+      tags: [user]
+      summary: Get a user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: A user object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+          
+        "403":
+          description: "Not allowed"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+            
+  /tasks:
+    get:
+      tags: [task]
+      summary: Get all tasks
+      responses:
+        "200":
+          description: A list of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Task"
+        "401":
+          description: "Not authenticated"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        "403":
+          description: "Not allowed"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+
+    post:
+      tags: [task]
+      summary: Create a new task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Task"
+      responses:
+        "201":
+          description: Task created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+        "401":
+          description: "Not authenticated"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+
+  /tasks/{taskId}:
+    get:
+      tags: [task]
+      summary: Get a single task by ID
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Task found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+        "401":
+          description: "Not authenticated"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        "403":
+          description: "Not allowed"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+
+    put:
+      tags: [task]
+      summary: Update a task by ID
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Task"
+      responses:
+        "200":
+          description: Task updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+        "401":
+          description: "Not authenticated"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+
+    delete:
+      tags: [task]
+      summary: Delete a task by ID
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Task deleted successfully
+        "401":
+          description: "Not authenticated"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        "5XX":
+          description: An error happened while process API request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+        default:
+          description: An unknown error occured at the server level
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomError"
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: number
+          readOnly: true
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+          example: "48s4sr-ds0dq@S+"
+          writeOnly: true
+    Task:
+      type: object
+      properties:
+        id:
+          type: number
+          example: "0054515412"
+          readOnly: true
+        title:
+          type: string
+          example: "Finish project report"
+        description:
+          type: string
+          example: "Complete the final report for the marketing project"
+        status:
+          type: string
+          enum: [pending, in-progress, completed]
+          example: "pending"
+        priority:
+          type: string
+          enum: [low, medium, high]
+          example: "high"
+        dueDate:
+          type: string
+          format: date-time
+          example: "2025-05-20T23:59:59Z"
+        category:
+          type: string
+          enum: [work, personal, health]
+          example: "work"
+        
+        
+    CustomError:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: number
+          minimum: 200
+          maximum: 504
