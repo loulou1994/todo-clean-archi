@@ -34,14 +34,3 @@
 //     });
 //   })
 //   .catch((error) => console.log(error));
-
-const bytes = new Uint8Array([
-  255, 140,  56,  75, 185, 173, 174,
-  201,  92, 193, 207,  64,   8, 186,
-  112, 178,  88, 123,  12, 229,  94,
-  171,  49, 105
-])
-
-const string = "abcdefghijklmnpqrstuvwxyz23456789"
-console.log(string.length, bytes[0] >> 3)
-// console.log(crypto.getRandomValues(bytes))
